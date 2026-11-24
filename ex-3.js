@@ -1,3 +1,4 @@
+//show only member name
 const bills = [
   {
     id: "1",
@@ -373,5 +374,18 @@ const bills = [
   },
 ];
 
-// Start coding here
-const billMembers;
+function showOnlyMember(allBills) {
+  const billsWithMembers = allBills.filter((currentBill) => {
+    //currentBill = ก้อน object in array ชิ้นที่กำลัวตรวจสอบอยุ่
+    //billsWithMembers = ก้อน ที่มี member
+      return currentBill.member !== null;
+    });
+  const memberNames = billsWithMembers.map((currentBill) => { 
+    //memberNames = array ที่เก็บเฉพาะชื่อสมาชิก
+    return currentBill.member.name;
+  })
+  return memberNames;
+}
+
+const result = showOnlyMember(bills);
+console.log(result);

@@ -1,7 +1,14 @@
+//includes, push array
+
 const carCollection = ["toyota", "fiat", "honda", "bmw"];
 
 function updateCarCollection(carBrand) {
-  // Start coding here
+  const carPosition = carCollection.indexOf(carBrand)+1;
+  if (carCollection.includes(carBrand)){
+    return `${carBrand} already exists in position ${carPosition} of the car collection.`
+  }else if (carCollection.includes(carBrand) != true){
+    return `New car collection is: toyota, fiat, Honda, BMW, ${carBrand}.`
+  }
 }
 
 //ผลลัพธ์ที่ควรได้จาก Example case

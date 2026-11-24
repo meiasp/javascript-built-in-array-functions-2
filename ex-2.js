@@ -1,3 +1,5 @@
+//show only object that have member
+
 const bills = [
   {
     id: "1",
@@ -373,6 +375,11 @@ const bills = [
   },
 ];
 
-// Start coding here
+// console.log(bills[0].member)
 
-const newBills;
+function onlyMemberBills(arr){ // arr = bills[i]
+  const filteredBills = arr.filter((curr) => curr.member !== null);
+  return filteredBills;
+}
+const newBills = onlyMemberBills(bills);
+console.log(newBills);

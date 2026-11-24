@@ -373,5 +373,24 @@ const bills = [
   },
 ];
 
-// Start coding here
-const totalMembers;
+function showUniqueMember (allBills){
+  const billsWithMembers = allBills.filter((currentBill) => {
+    //currentBill = ก้อน object in array ชิ้นที่กำลัวตรวจสอบอยุ่
+    //billsWithMembers = ก้อน ที่มี member
+      return currentBill.member !== null;
+    });
+  const memberNames = billsWithMembers.map((currentBill) => { 
+    //memberNames = array ที่เก็บเฉพาะชื่อสมาชิกหลังฟิลเตอร์แล้ว
+    return currentBill.member.name;
+  });
+  const uniqueName = memberNames.reduce((acc,curr) => {
+    if(!acc.includes(curr)){
+      acc.push(curr);
+    }
+    return acc;
+  }, []).length;
+  return uniqueName;
+}
+
+const totalMembers = showUniqueMember(bills);
+console.log("Unique Members Counts:",totalMembers);

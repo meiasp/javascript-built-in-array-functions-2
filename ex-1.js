@@ -1,3 +1,4 @@
+//หาผลรวมของ bills.total
 const bills = [
   {
     id: "1",
@@ -373,4 +374,13 @@ const bills = [
   },
 ];
 
-// Start coding here
+// console.log(bills[0]);
+// console.log(bills[0].total);
+
+function totalPrice (billsArr){
+  const billTotal = billsArr.reduce((acc,curr) => acc + curr.total,0)
+  return `Total bill transaction is ${billTotal}`;
+}
+
+let result = totalPrice (bills);
+console.log(result)

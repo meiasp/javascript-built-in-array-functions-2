@@ -373,6 +373,19 @@ const bills = [
     },
 ];
 
-// Start coding here
+//result ต้องเป็น object ที่มี {key: value;}
+//ใน reduce เป็น object
+//location จพได้จาก objName.location
+//total จะได้จาก objName.total
 
-const totalPaidByLocation;
+let totalPaidByLocation = bills.reduce((acc,curr) => {
+    if (acc[curr.location]){
+        acc[curr.location] += curr.total;
+    } else {
+        acc[curr.location] = curr.total;
+    }
+    return acc;
+}, {});
+
+
+console.log(totalPaidByLocation);
