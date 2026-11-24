@@ -1,6 +1,8 @@
-function isPalindrome(string) {
-  // Start coding here
-}
+/* function isPalindrome(word) {
+  return word.trim() === word.trim().split("").reverse().join("")
+} */
+
+const isPalindrome = (word) => word.trim() === word.trim().split("").reverse().join("")
 
 //Example case
 console.log(isPalindrome("reviver"));// true

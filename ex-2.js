@@ -374,5 +374,10 @@ const bills = [
 ];
 
 // Start coding here
+function calculateBills(bill) {
+  return bill.filter((result) => result.member !== null)
+}
 
-const newBills;
+const newBills = calculateBills(bills);
+
+console.log(newBills);
